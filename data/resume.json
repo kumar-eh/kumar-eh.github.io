@@ -1,0 +1,77 @@
+{
+  "name": "Nandha Kumar B K",
+  "title": "Full Stack Developer",
+  "location": "Chennai, India",
+  "tagline": "I build and maintain e-commerce storefronts and Salesforce applications. Right now I'm at CDW Technologies, working on Salesforce Commerce Cloud.",
+  "description": "Nandha Kumar B K is a full stack developer in Chennai working on e-commerce platforms and Salesforce.",
+  "summary": [
+    "I'm a full stack developer with over three years of experience building web applications, mostly e-commerce platforms and Salesforce solutions. I work on both the frontend and the backend, and I'm comfortable with API integrations, databases and the architecture that ties them together.",
+    "I like turning business requirements into working features, owning them from the first conversation through to production, and keeping the code easy to maintain."
+  ],
+  "email": "nandhakumar.bk.dev@gmail.com",
+  "links": [
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/nandhakumarbk" },
+    { "label": "GitHub", "url": "https://github.com/kumar-eh" }
+  ],
+  "skills": [
+    { "label": "Languages", "items": ["JavaScript", "Java", "Apex"] },
+    { "label": "Backend", "items": ["Node.js", "REST APIs", "API integration", "System design"] },
+    { "label": "Frontend", "items": ["HTML5", "CSS3", "Bootstrap", "Responsive UI", "Component-based architecture"] },
+    { "label": "Platforms", "items": ["Salesforce Commerce Cloud", "Salesforce CRM", "Lightning Web Components", "Salesforce Flows"] },
+    { "label": "Tools", "items": ["GitHub", "GitHub Actions", "GitHub Copilot", "Docker", "Postman", "Figma", "Agile tools"] }
+  ],
+  "experience": [
+    {
+      "name": "CDW Technologies",
+      "roles": [
+        {
+          "title": "SFCC Developer",
+          "period": "Jan 2026 – Present",
+          "project": "Retail e-commerce and rental site for winter sports gear",
+          "bullets": [
+            "Sole offshore developer on the project, working directly with client stakeholders on requirements, technical discussions, issue triage and delivery.",
+            "Helped rebuild the main pages of the rental flow (Gear, Renters, Payment and Store Landing) with a focus on performance and a smoother path from gear selection to payment.",
+            "Built reservation check-in by integrating the client's existing API, so customers can look up reservations made at the POS, verify their rental and check in on the storefront.",
+            "Built a kids' rental package feature covering frontend and backend logic, and added ADA accessibility fixes across several storefront pages."
+          ]
+        },
+        {
+          "title": "Salesforce Developer",
+          "period": "Jan 2025 – Dec 2025",
+          "project": "Enterprise CRM for a supply chain solutions company",
+          "bullets": [
+            "Built features across opportunity management, quote generation and sales operations using Apex, Lightning Web Components, Flows and admin configuration.",
+            "Designed an LWC search and filter interface for millions of opportunity records, with configurable filters for different data types. Phase 2 added shareable bookmarked searches and Excel export.",
+            "Owned key parts of a product management feature that imports thousands of product records from CSV, using job-based batch processing for reliability at volume.",
+            "Built single and bulk product matching for N-series part numbers through Oracle APIs, and worked with the solution architect on load testing and performance fixes.",
+            "Built sales team creation flows with Flows and Apex, dynamic report filters and other automations, and handled production debugging."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tools and Equipment",
+      "roles": [
+        {
+          "title": "Full Stack Developer",
+          "period": "Aug 2023 – Oct 2024",
+          "project": "E-commerce site",
+          "bullets": [
+            "Built features end to end across frontend UI and backend logic, taking on more ownership over time.",
+            "Implemented the pricing revamp across minicart, cart, checkout, order confirmation and emails, showing product discounts, order discounts, promotions, surcharges and shipping as separate lines.",
+            "Worked on the account management revamp: saved address book, browsing history and account settings.",
+            "Contributed to the OMS integration for shipping and returns, mainly the shipping workflow.",
+            "Ran a proof of concept for profile picture upload and image cropping."
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech, Information Technology",
+      "school": "St. Joseph's College of Engineering, Chennai",
+      "period": "2019 – 2023"
+    }
+  ]
+}
