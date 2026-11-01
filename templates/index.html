@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{.Name}} — {{.Title}}</title>
+  <meta name="description" content="{{.Description}}">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a8441c'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' text-anchor='middle' fill='%23faf8f5'%3EN%3C/text%3E%3C/svg%3E">
+  <script>
+    // Set the theme before first paint so there is no flash.
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("theme"); } catch (e) {}
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="home" href="#top">{{.Name}}</a>
+      <nav aria-label="Sections">
+        <a href="#summary">Summary</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <button type="button" id="theme-toggle" aria-label="Switch colour theme"></button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <h1>{{.Name}}</h1>
+        <p class="role">{{.Title}} · {{.Location}}</p>
+        <p class="tagline">{{.Tagline}}</p>
+      </section>
+
+      <section id="summary">
+        <h2>Summary</h2>
+        <div class="body">
+          {{range .Summary}}<p>{{.}}</p>
+          {{end}}
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <dl class="body skills">
+          {{range .Skills}}<div>
+            <dt>{{.Label}}</dt>
+            <dd>{{join .Items ", "}}</dd>
+          </div>
+          {{end}}
+        </dl>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="body">
+          {{range .Experience}}<div class="company">
+            <h3>{{.Name}}</h3>
+            {{range .Roles}}<article class="role-entry">
+              <p class="meta"><span class="job">{{.Title}}</span><span class="period">{{.Period}}</span></p>
+              <p class="project">{{.Project}}</p>
+              <ul>
+                {{range .Bullets}}<li>{{.}}</li>
+                {{end}}
+              </ul>
+            </article>
+            {{end}}
+          </div>
+          {{end}}
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <div class="body">
+          {{range .Education}}<p class="edu"><span class="job">{{.Degree}}</span><span class="period">{{.Period}}</span></p>
+          <p class="project">{{.School}}</p>
+          {{end}}
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="body">
+          <p>The easiest way to reach me is by email.</p>
+          <p class="contact-links">
+            <a href="mailto:{{.Email}}">{{.Email}}</a>
+            {{range .Links}}<a href="{{.URL}}" rel="noopener">{{.Label}}</a>
+            {{end}}
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site">
+      <p>Built with Go and a little JavaScript.</p>
+    </footer>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
