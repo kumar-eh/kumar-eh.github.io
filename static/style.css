@@ -1,0 +1,342 @@
+:root {
+  --bg: #faf8f5;
+  --fg: #1c1b19;
+  --muted: #6b675f;
+  --rule: #e3ded5;
+  --accent: #a8441c;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --bg: #161513;
+  --fg: #e8e4dc;
+  --muted: #9a948a;
+  --rule: #2c2a26;
+  --accent: #e0875a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* Header */
+
+header.site {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+header.site a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+header.site a:hover {
+  color: var(--fg);
+}
+
+header.site .home {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+header.site nav {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+}
+
+#theme-toggle {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+#theme-toggle:hover {
+  color: var(--fg);
+}
+
+/* Sections */
+
+section {
+  scroll-margin-top: 1rem;
+}
+
+section + section,
+section.hero + section {
+  border-top: 1px solid var(--rule);
+}
+
+section:not(.hero) {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 0.75rem 2rem;
+  padding: 2.5rem 0;
+}
+
+section h2 {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Hero */
+
+.hero {
+  padding: 4rem 0 3.5rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-family: var(--serif);
+  font-size: clamp(2.25rem, 7vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.hero .role {
+  margin: 0 0 1.75rem;
+  color: var(--muted);
+}
+
+.hero .tagline {
+  max-width: 34rem;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+/* Skills */
+
+.skills {
+  margin: 0;
+}
+
+.skills > div {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.skills dt {
+  color: var(--muted);
+}
+
+.skills dd {
+  margin: 0;
+}
+
+/* Experience and education */
+
+.company + .company {
+  margin-top: 2.5rem;
+}
+
+.company h3 {
+  margin: 0 0 1rem;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.role-entry + .role-entry {
+  margin-top: 2rem;
+}
+
+.meta,
+.edu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 1rem;
+  margin: 0;
+}
+
+.job {
+  font-weight: 600;
+}
+
+.period {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.project {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.role-entry ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.role-entry li {
+  margin-bottom: 0.55rem;
+  padding-left: 0.15rem;
+}
+
+.role-entry li::marker {
+  color: var(--muted);
+}
+
+/* Contact */
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+/* Footer */
+
+footer.site {
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+footer.site p {
+  margin: 0;
+}
+
+/* Small screens */
+
+@media (max-width: 40rem) {
+  body {
+    font-size: 1rem;
+  }
+
+  header.site nav a {
+    display: none;
+  }
+
+  section:not(.hero) {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 2rem 0;
+  }
+
+  .hero {
+    padding: 2.5rem 0 2.5rem;
+  }
+
+  .hero .tagline {
+    font-size: 1.15rem;
+  }
+
+  .skills > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
+/* Print */
+
+@media print {
+  :root,
+  :root[data-theme="dark"] {
+    --bg: #fff;
+    --fg: #000;
+    --muted: #444;
+    --rule: #ccc;
+    --accent: #000;
+  }
+
+  body {
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  header.site nav,
+  footer.site {
+    display: none;
+  }
+
+  .wrap {
+    max-width: none;
+    padding: 0;
+  }
+
+  .hero {
+    padding: 0 0 1rem;
+  }
+
+  section:not(.hero) {
+    padding: 1rem 0;
+  }
+
+  .role-entry,
+  .company h3 {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
